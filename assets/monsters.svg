@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px" y="0px"
+    viewBox="0 0 800 800"
+    enable-background="new 0 0 800 800"
+    xml:space="preserve"
+>
+    <g id="Body">
+        <rect x="200" y="400" fill="#29ABE2" width="400" height="400"/>
+    </g>
+
+    <g id="Eyes_1">
+        <circle fill="#FFFFFF" cx="400" cy="500" r="100"/>
+        <path fill="#001C43" d="M410.3,551.6c43,0,79-30.2,87.9-70.5c-8.8-46.2-49.4-81.1-98.2-81.1c-30.1,0-57.2,13.3-75.5,34.4
+            c-2.7,8.6-4.2,17.7-4.2,27.2C320.3,511.3,360.6,551.6,410.3,551.6z"/>
+        <circle fill="#FFFFFF" cx="429.6" cy="445.1" r="25"/>
+    </g>
+
+    <g id="Head_1">
+        <path fill="#29ABE2" d="M400,200c-110.5,0-200,89.5-200,200h400C600,289.5,510.5,200,400,200z"/>
+    </g>
+</svg>
