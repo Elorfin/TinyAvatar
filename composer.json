@@ -8,11 +8,11 @@
     "homepage": "http://github.com/Elorfin"
   }],
   "require": {
-    "php": ">= 7.2"
+    "php": ">= 7.1"
   },
   "autoload": {
     "psr-4": {
-      "Elorfin\\TinyMonsters\\": "TinyMonsters"
+      "Elorfin\\TinyAvatar\\": "src/"
     }
   }
 }

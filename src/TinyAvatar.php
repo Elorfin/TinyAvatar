@@ -2,17 +2,19 @@
 
 namespace Elorfin\TinyAvatar;
 
+use Elorfin\TinyAvatar\Generator\AbstractGenerator;
+
 class TinyAvatar
 {
     /**
-     * Create a TinyAvatar for `input` string.
+     * Generate a TinyAvatar for `input` string.
      *
      * @param string $type  - the type of avatar to draw. Must be one of : 'bot', 'invader', 'monster'.
      * @param string $input - the string to use as generation seed. Should be unique to ensure uniqueness of avatars.
      *
      * @return mixed
      */
-    static public function draw(string $type, string $input)
+    static public function generate(string $type, string $input)
     {
         $availableGenerators = array_keys(static::getGenerators());
         if (!in_array($type, $availableGenerators)) {
@@ -25,12 +27,15 @@ class TinyAvatar
             throw new \InvalidArgumentException('Cannot generate TinyAvatar for empty strings.');
         }
 
-        // Generates hash seed from the input string
+        // get the correct generator class
+        $generatorClass = static::getGenerator($type);
+        /** @var AbstractGenerator $generator */
+        $generator = new $generatorClass;
+
+        // generate hash seed from the input string
         $seed = md5($input);
 
-        $drawing = call_user_func([static::getGenerator($type), 'generate'], $seed);
-
-        return $drawing;
+        return $generator->generate($seed);
     }
 
     /**

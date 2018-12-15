@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    x="0px" y="0px"
+    viewBox="0 0 800 800"
+    enable-background="new 0 0 800 800"
+    xml:space="preserve"
+>
+    <g id="Head_8">
+        <circle class="secondary-fill" cx="542.3" cy="261.6" r="72"/>
+        <circle class="secondary-fill" cx="200.3" cy="327.6" r="35"/>
+        <circle class="secondary-fill" cx="350" cy="198" r="50"/>
+        
+        <path class="primary-fill" d="M400,200c-110.5,0-200,89.5-200,200h400C600,289.5,510.5,200,400,200z"/>
+        <path class="primary-fill" d="M241.4,307.9l-26,63.9c-2.5,6.1-9.5,9.1-15.6,6.6l-6.5-2.6c-6.1-2.5-9.1-9.5-6.6-15.6l26-63.9
+            c2.5-6.1,9.5-9.1,15.6-6.6l6.5,2.6C240.9,294.7,243.8,301.8,241.4,307.9z"/>
+        <path class="primary-fill" d="M405.7,213.7l-96.9,23.6c-6.4,1.6-12.9-2.4-14.5-8.8l-1.7-6.8c-1.6-6.4,2.4-12.9,8.8-14.5l96.9-23.6
+            c6.4-1.6,12.9,2.4,14.5,8.8l1.7,6.8C416.1,205.6,412.1,212.1,405.7,213.7z"/>
+        <path class="primary-fill" d="M577.5,336.4L468.3,225.3c-4.6-4.7-4.6-12.3,0.1-17l5-4.9c4.7-4.6,12.3-4.6,17,0.1l109.2,111.1
+            c4.6,4.7,4.6,12.3-0.1,17l-5,4.9C589.8,341.2,582.1,341.1,577.5,336.4z"/>
+    </g>
+</svg>

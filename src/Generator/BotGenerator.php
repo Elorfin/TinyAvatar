@@ -4,18 +4,13 @@ namespace Elorfin\TinyAvatar\Generator;
 
 class BotGenerator extends AbstractGenerator
 {
-    static public function generate(string $seed)
+    protected function getAssetPath(): string
     {
-
+        return 'bot';
     }
 
-    static private function drawHead()
+    public function generate(string $seed): string
     {
-
-    }
-
-    static private function drawBody()
-    {
-
+        return 'bot';
     }
 }

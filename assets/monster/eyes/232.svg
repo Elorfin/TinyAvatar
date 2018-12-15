@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    x="0px" y="0px"
+    viewBox="0 0 800 800"
+    enable-background="new 0 0 800 800"
+    xml:space="preserve"
+>
+    <g id="Eyes_5">
+        <path fill="#FFFFFF" d="M400,500H260c0,38.7,31.3,70,70,70S400,538.7,400,500z"/>
+        <path fill="#001C43" d="M330,535c19.3,0,35-15.7,35-35h-70C295,519.3,310.7,535,330,535z"/>
+        <path fill="#FFFFFF" d="M540,500H400c0,38.7,31.3,70,70,70S540,538.7,540,500z"/>
+        <path fill="#001C43" d="M470,535c19.3,0,35-15.7,35-35h-70C435,519.3,450.7,535,470,535z"/>
+    </g>
+</svg>

@@ -1,0 +1,38 @@
+body {
+    color: #464646;
+    text-align: center;
+}
+
+.avatar-preview {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 210px;
+    width: 280px;
+}
+
+.avatar {
+    overflow: hidden;
+    display: inline-block;
+    background: #F5F5ED;
+    margin: 5px;
+}
+
+.avatar-round {
+    border-radius: 50%;
+}
+
+.avatar-lg {
+    width: 200px;
+    height: 200px;
+}
+
+.avatar-sm {
+    width: 60px;
+    height: 60px;
+}
+
+.avatar-xs {
+    width: 30px;
+    height: 30px;
+}

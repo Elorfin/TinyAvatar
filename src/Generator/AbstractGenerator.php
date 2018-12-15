@@ -4,5 +4,5 @@ namespace Elorfin\TinyAvatar\Generator;
 
 abstract class AbstractGenerator
 {
-    abstract static public function generate(string $seed): string;
+    abstract public function generate(string $seed): string;
 }

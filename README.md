@@ -5,7 +5,7 @@ A library to generate unique cute monsters, awesome bots or pixel invaders.
 
 ## Requirements
 
- * PHP >= 7.2
+ * PHP >= 7.1
  * [Composer](https://getcomposer.org) is required for installation
  
  
@@ -16,9 +16,9 @@ use TinyAvatar\TinyAvatar;
 
 // ...
 
-TinyAvatar::draw('bot', 'test@email.com');
-TinyAvatar::draw('invader', 'test@email.com');
-TinyAvatar::draw('monster', 'test@email.com');
+TinyAvatar::generate('bot', 'test@email.com');
+TinyAvatar::generate('invader', 'test@email.com');
+TinyAvatar::generate('monster', 'test@email.com');
 
 ```
  
