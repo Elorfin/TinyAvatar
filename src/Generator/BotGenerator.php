@@ -6,10 +6,10 @@ class BotGenerator extends AbstractGenerator
 {
     protected function getAssetPath(): string
     {
-        return 'bot';
+        return __DIR__.'/../../assets/bot';
     }
 
-    public function generate(string $seed): string
+    public function generate(): string
     {
         return 'bot';
     }

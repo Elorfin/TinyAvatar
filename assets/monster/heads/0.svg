@@ -6,7 +6,7 @@
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 800 800"
 >
-    <g id="Body">
-        <rect class="primary-fill" x="200" y="400" width="400" height="400" />
+    <g id="Head_0">
+        <path class="primary-fill" d="M400,200c-110.5,0-200,89.5-200,200h400C600,289.5,510.5,200,400,200z"/>
     </g>
 </svg>

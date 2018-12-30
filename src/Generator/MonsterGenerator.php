@@ -5,110 +5,67 @@ namespace Elorfin\TinyAvatar\Generator;
 /**
  * Class MonsterGenerator.
  *
- * Generation rules :
- *      | 1f 38 70 |  be  |   27  |  4f  |    6c    | 49 b3 e3 1a 0c 67 28 95 7f
- *      |   color  | head | mouth | eyes | special  |
- *
- *   - 0, 1, 2 : primary color
- *   - 1, 2, 0 : secondary color
- *   - 3       : head type
- *   - 4       : mouth
- *   - 5       : eyes
- *   - 6       : special
+ * Generation rules (seed is a MD5 hash of 32 chars):
+ *   - 0-1-2-3-4-5   : primary color
+ *   - 6-7-8-9-10-11 : secondary color
+ *   - 12-13         : head
+ *   - 14-15         : eyes
+ *   - 16-17         : mouth
+ *   - 18-19         : special
+ *   - 20            : special v-mirror
  */
 class MonsterGenerator extends AbstractAssetGenerator
 {
-    private $seed;
-    private $primaryColor;
-    private $secondaryColor;
-
     protected function getAssetPath(): string
     {
-        return 'monster';
+        return __DIR__.'/../../assets/monster';
     }
 
-    public function generate(string $seed): string
+    public function generate(): string
     {
-        // convert hash seed into an array of 16 hex numbers for easy manipulation
-        $this->seed = str_split($seed, 2);
+        $this->svg->addAttribute('shape-rendering', 'geometricPrecision');
 
-        $this->calculateColors();
-
-        // create base svg
-        $svgTemplate = new \SimpleXMLElement($this->getAsset('body'));
+        // append body
+        $body = new \SimpleXMLElement($this->getAsset('body'));
+        if (0 !== $body->count()) {
+            $this->append($this->svg, $body->children()[0]);
+        }
 
         // append special
 
         // append head
-        $head = new \SimpleXMLElement($this->getAsset('heads/'.hexdec($this->seed[3])));
+        $head = new \SimpleXMLElement($this->getAsset('heads/'.$this->getAssetNum(substr($this->seed, 6, 2))));
         if (0 !== $head->count()) {
-            $this->append($svgTemplate, $head->children()[0]);
+            $this->append($this->svg, $head->children()[0]);
         }
 
         // append eyes
-        $eyes = new \SimpleXMLElement($this->getAsset('eyes/'.hexdec($this->seed[4])));
+        $eyes = new \SimpleXMLElement($this->getAsset('eyes/'.$this->getAssetNum(substr($this->seed, 8, 2))));
         if (0 !== $eyes->count()) {
-            $this->append($svgTemplate, $eyes->children()[0]);
+            $this->append($this->svg, $eyes->children()[0]);
         }
 
         // append mouth
+        $mouth = new \SimpleXMLElement($this->getAsset('mouths/'.$this->getAssetNum(substr($this->seed, 10, 2))));
+        if (0 !== $mouth->count()) {
+            $this->append($this->svg, $mouth->children()[0]);
+        }
 
         // set colors to generated monster
-        $this->colorize($svgTemplate);
+        $this->colorize($this->svg);
 
-        return $svgTemplate->asXML();
+        return $this->svg->asXML();
     }
 
-    private function calculateColors()
+    /**
+     * Hex is a value between 0 - 255.
+     * We will reduce it to get a value between 0 - 26.
+     *
+     * @param $hex
+     * @return float
+     */
+    private function getAssetNum($hex)
     {
-        // calculate primary color from 6 first chars
-        $this->primaryColor = $this->seed[0].$this->seed[1].$this->seed[2];
-
-        // move first HEX to the end to get a complementary color
-        //$this->secondaryColor = $this->seed[2].$this->seed[0].$this->seed[1];
-        $this->secondaryColor = $this->seed[3].$this->seed[4].$this->seed[5];
-    }
-
-    private function append(\SimpleXMLElement $parent, \SimpleXMLElement $toAppend)
-    {
-        $appended = $parent->addChild($toAppend->getName());
-
-        // grab attributes
-        foreach ($toAppend->attributes() as $attrName => $attrValue) {
-            $appended->addAttribute($attrName, $attrValue);
-        }
-
-        // grab children
-        if (0 !== $toAppend->count()) {
-            foreach ($toAppend->children() as $child) {
-                $this->append($appended, $child);
-            }
-        }
-    }
-
-    private function colorize(\SimpleXMLElement $toColorize)
-    {
-        foreach ($toColorize->attributes() as $attrName => $attrValue) {
-            if ('class' === $attrName) {
-                if (false !== strpos($attrValue, 'primary-fill')) {
-                    $toColorize->addAttribute('fill', "#{$this->primaryColor}");
-                } else if (false !== strpos($attrValue, 'secondary-fill')) {
-                    $toColorize->addAttribute('fill', "#{$this->secondaryColor}");
-                }
-
-                if (false !== strpos($attrValue, 'primary-stroke')) {
-                    $toColorize->addAttribute('stroke', "#{$this->primaryColor}");
-                } else if (false !== strpos($attrValue, 'secondary-stroke')) {
-                    $toColorize->addAttribute('stroke', "#{$this->secondaryColor}");
-                }
-            }
-        }
-
-            // grab children
-        if (0 !== $toColorize->count()) {
-            foreach ($toColorize->children() as $child) {
-                $this->colorize($child);
-            }
-        }
+        return round(hexdec($hex) / 20);
     }
 }

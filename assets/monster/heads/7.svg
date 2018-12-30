@@ -4,12 +4,9 @@
 <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    x="0px" y="0px"
     viewBox="0 0 800 800"
-    enable-background="new 0 0 800 800"
-    xml:space="preserve"
 >
-    <g id="Head_8">
+    <g id="Head_7">
         <circle class="secondary-fill" cx="542.3" cy="261.6" r="72"/>
         <circle class="secondary-fill" cx="200.3" cy="327.6" r="35"/>
         <circle class="secondary-fill" cx="350" cy="198" r="50"/>

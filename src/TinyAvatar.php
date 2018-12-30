@@ -27,15 +27,15 @@ class TinyAvatar
             throw new \InvalidArgumentException('Cannot generate TinyAvatar for empty strings.');
         }
 
-        // get the correct generator class
-        $generatorClass = static::getGenerator($type);
-        /** @var AbstractGenerator $generator */
-        $generator = new $generatorClass;
-
         // generate hash seed from the input string
         $seed = md5($input);
 
-        return $generator->generate($seed);
+        // get the correct generator class
+        $generatorClass = static::getGenerator($type);
+        /** @var AbstractGenerator $generator */
+        $generator = new $generatorClass($seed);
+
+        return $generator->generate();
     }
 
     /**

@@ -11,7 +11,7 @@ abstract class AbstractAssetGenerator extends AbstractGenerator
 
     protected function getAsset(string $name): string
     {
-        $filePath = __DIR__.'/../../assets/'.$this->getAssetPath().'/'.$name.'.svg';
+        $filePath = $this->getAssetPath().'/'.$name.'.svg';
         if (!file_exists($filePath)) {
             throw new \InvalidArgumentException(
                 sprintf('Cannot find asset named "%s" (expected to be found in: %s).', $name, $filePath)
@@ -21,8 +21,48 @@ abstract class AbstractAssetGenerator extends AbstractGenerator
         return file_get_contents($filePath);
     }
 
-    protected function pickAsset($part, $number): string
+    protected function append(\SimpleXMLElement $parent, \SimpleXMLElement $toAppend)
     {
+        $appended = $parent->addChild($toAppend->getName());
 
+        // grab attributes
+        foreach ($toAppend->attributes() as $attrName => $attrValue) {
+            $appended->addAttribute($attrName, $attrValue);
+        }
+
+        // grab children
+        if (0 !== $toAppend->count()) {
+            foreach ($toAppend->children() as $child) {
+                $this->append($appended, $child);
+            }
+        }
+    }
+
+    protected function colorize(\SimpleXMLElement $toColorize)
+    {
+        // TODO : remove class attribute after reading it
+
+        foreach ($toColorize->attributes() as $attrName => $attrValue) {
+            if ('class' === $attrName) {
+                if (false !== strpos($attrValue, 'primary-fill')) {
+                    $toColorize->addAttribute('fill', sprintf('rgb(%d, %d, %d)', ...$this->primaryColor));
+                } else if (false !== strpos($attrValue, 'secondary-fill')) {
+                    $toColorize->addAttribute('fill', sprintf('rgb(%d, %d, %d)', ...$this->secondaryColor));
+                }
+
+                if (false !== strpos($attrValue, 'primary-stroke')) {
+                    $toColorize->addAttribute('stroke', sprintf('rgb(%d, %d, %d)', ...$this->primaryColor));
+                } else if (false !== strpos($attrValue, 'secondary-stroke')) {
+                    $toColorize->addAttribute('stroke', sprintf('rgb(%d, %d, %d)', ...$this->secondaryColor));
+                }
+            }
+        }
+
+        // grab children
+        if (0 !== $toColorize->count()) {
+            foreach ($toColorize->children() as $child) {
+                $this->colorize($child);
+            }
+        }
     }
 }

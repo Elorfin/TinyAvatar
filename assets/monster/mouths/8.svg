@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 800 800"
+>
+    <g id="Mouth_8">
+        <path fill="#FFFFFF" d="M366,740.9c0,2.2,1.8,4.1,4,4.1h24c2.2,0,4-1.9,4-4.1v-22.7c-12.5-0.1-23-0.9-32-2.2
+            V740.9z"/>
+        <path fill="#FFFFFF" d="M402,718.2v32.5c0,2.2,1.8,4.2,4,4.2h24c2.2,0,4-2.1,4-4.2V716
+            C425,717.3,414.5,718.2,402,718.2z"/>
+        <path opacity="0.4" fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M320,695
+            c15.8,8.7,35.8,18,80,18s64.2-9.3,80-18"/>
+    </g>
+</svg>

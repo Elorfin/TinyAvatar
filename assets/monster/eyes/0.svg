@@ -4,13 +4,10 @@
 <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    x="0px" y="0px"
     viewBox="0 0 800 800"
-    enable-background="new 0 0 800 800"
-    xml:space="preserve"
 >
-    <g id="Eyes_1">
-    <circle fill="#FFFFFF" cx="400" cy="500" r="100"/>
+    <g id="Eyes_0">
+        <circle fill="#FFFFFF" cx="400" cy="500" r="100"/>
         <path fill="#001C43" d="M410.3,551.6c43,0,79-30.2,87.9-70.5c-8.8-46.2-49.4-81.1-98.2-81.1c-30.1,0-57.2,13.3-75.5,34.4
             c-2.7,8.6-4.2,17.7-4.2,27.2C320.3,511.3,360.6,551.6,410.3,551.6z"/>
         <circle fill="#FFFFFF" cx="429.6" cy="445.1" r="25"/>

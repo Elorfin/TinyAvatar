@@ -4,12 +4,9 @@
 <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    x="0px" y="0px"
     viewBox="0 0 800 800"
-    enable-background="new 0 0 800 800"
-    xml:space="preserve"
 >
-    <g id="Head_4">
+    <g id="Head_3">
         <path class="secondary-fill" d="M400,200c-110.5,0-200,89.5-200,200h400C600,289.5,510.5,200,400,200z"/>
         <g opacity="0.2">
             <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="8" x1="400" y1="208" x2="400" y2="400"/>
