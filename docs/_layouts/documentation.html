@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <base href="{{ '/' | absolute_url }}" />
+
+        {% seo %}
+
+        <link rel="stylesheet" href="{{ '/assets/css/styles.css?v=' | append: site.github.build_revision | relative_url }}" />
+        <link rel="shortcut icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" />
+    </head>
+
+    <body>
+        {% include header.html %}
+
+        <div class="documentation">
+            <ul class="documentation-summary">
+                <li>
+                    <a href="{{ "getting-started" | absolute_url }}.html">Getting started</a>
+
+                    <ul>
+                        <li>
+                            <a href="{{ "getting-started" | absolute_url }}.html#requirements">Requirements</a>
+                        </li>
+                        <li><a href="{{ "getting-started" | absolute_url }}.html#installation">Installation</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="{{ "usage" | absolute_url }}.html">Usage</a>
+                </li>
+            </ul>
+
+            <div class="documentation-content">
+                {{ content }}
+            </div>
+        </div>
+    </body>
+</html>

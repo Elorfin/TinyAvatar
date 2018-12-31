@@ -1,0 +1,44 @@
+.header {
+  color: white;
+  background: #20232a;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    min-height: 60px;
+  }
+
+  .navbar-brand {
+    color: white;
+    padding: 0 15px;
+    text-decoration: none;
+    font-weight: 900;
+  }
+}
+
+.navbar a {
+  display: inline-block;
+  color: #aaa;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+.navbar-externals {
+  margin-left: auto;
+  font-size: 12px;
+
+  a {
+    b {
+      display: block;
+      font-size: 14px;
+      color: #FFFFFF;
+    }
+
+    & + a {
+      border-left: 1px solid #aaa;
+    }
+  }
+}

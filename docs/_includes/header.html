@@ -1,0 +1,28 @@
+<header class="header">
+    <div class="container" role="presentation">
+        <a class="navbar-brand" href="{{ "/" | absolute_url }}">{{ site.title }}</a>
+
+        <nav class="navbar navbar-links">
+            <a href="{{ "getting-started" | absolute_url }}.html">
+                Docs
+            </a>
+        </nav>
+
+        <nav class="navbar navbar-externals">
+            <a href="{{ 'https://gitter.im/' | append : site.github.repository_nwo }}">
+                Need
+                <b>Help ?</b>
+            </a>
+
+            <a href="{{ site.github.zip_url }}">
+                Download
+                <b>ZIP File</b>
+            </a>
+
+            <a href="{{ site.github.repository_url }}">
+                View on
+                <b>GitHub</b>
+            </a>
+        </nav>
+    </div>
+</header>
